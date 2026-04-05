@@ -20,3 +20,13 @@ python-dotenv>=1.0.0           # auto-load GROQ_API_KEY / HF_TOKEN from .env
 soundfile>=0.12.1              # wav/flac encoding used internally by pyannote
 sounddevice>=0.4.6             # live microphone recording capabilities
 numpy                          # required by sounddevice for audio processing
+
+# ── v4.0 Professional Upgrades ────────────────────────────────────────────────
+fpdf2>=2.8.7                   # professional PDF generation
+tqdm>=4.67.3                   # console progress bars
+
+# ── Backend Integration (v4.1) ────────────────────────────────────────────────
+fastapi>=0.104.1               # API routing
+uvicorn>=0.23.2                # ASGI server
+python-multipart>=0.0.6        # form data (audio uploads)
+supabase>=2.3.0                # supabase API client
