@@ -1,0 +1,22 @@
+# Clinical AI Assistant — Python Dependencies
+# ============================================
+#
+# Step 1: Install GPU-accelerated PyTorch FIRST (CUDA 12.1 for RTX 3050)
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+#
+# Step 2: Install the rest
+#   pip install -r requirements.txt
+
+# ── Core pipeline ─────────────────────────────────────────────────────────────
+pyannote.audio>=3.1.0          # GPU speaker diarization
+pydub>=0.25.1                  # audio slicing
+groq>=0.9.0                    # Groq Whisper + Llama 3 API client
+pydantic>=2.0.0                # strict output schema validation
+
+# ── Environment & utilities ───────────────────────────────────────────────────
+python-dotenv>=1.0.0           # auto-load GROQ_API_KEY / HF_TOKEN from .env
+
+# ── Audio I/O (pulled in by pyannote, listed for pinning) ─────────────────────
+soundfile>=0.12.1              # wav/flac encoding used internally by pyannote
+sounddevice>=0.4.6             # live microphone recording capabilities
+numpy                          # required by sounddevice for audio processing
